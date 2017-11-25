@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.alecsandra.library">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- Used for login component -->
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Used for home page component -->
+        <activity android:name=".ViewHomePage" />
+        <activity
+            android:name=".AddNewBook"
+            android:parentActivityName=".ViewHomePage">
+
+            <!-- TODO: AC - find if this is necessary or not -->
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ViewHomePage" />
+        </activity>
+        <!-- Used for search new books component -->
+        <activity
+            android:name=".SearchBook"
+            android:parentActivityName=".ViewHomePage">
+
+            <!-- TODO: AC - find if this is necessary or not -->
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ViewHomePage" />
+        </activity>
+        <!-- Used for choose which book list to display component -->
+        <activity
+            android:name=".ViewBooks"
+            android:parentActivityName=".ViewHomePage">
+
+            <!-- TODO: AC - find if this is necessary or not -->
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ViewHomePage" />
+        </activity>
+        <!-- Used for displaying all books component -->
+        <activity
+            android:name=".ViewAllBooks"
+            android:parentActivityName=".ViewBooks">
+
+            <!-- TODO: AC - find if this is necessary or not -->
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ViewBooks" />
+        </activity>
+        <!-- Used for favorites books component -->
+        <activity
+            android:name=".ViewMyFavoriteBooks"
+            android:parentActivityName=".ViewBooks">
+
+            <!-- TODO: AC - find if this is necessary or not -->
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ViewBooks" />
+        </activity>
+
+        <!-- Used for ocr -->
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="ocr" />
+        <!--TODO: AC - interesting that here the value is changed accordingly with the value from build.gradle of com.google.android.gms:play-services-vision:11.0.4-->
+        <!--TODO: AC - this caused at one point when I modified it some gradle errors at building-->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".ocrFromImage"></activity>
+    </application>
+
+</manifest>

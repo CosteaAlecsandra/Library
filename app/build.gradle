@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "com.example.alecsandra.library"
+        minSdkVersion 23
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //Add libraries that will be used in the app
+    //used for ocr
+    //TODO: AC - verify, here might be a problem with the versions, in https://en.1answer.info/737461636b6f766572666c6f772e636f6d-7a3432363238363237 is 24+
+
+    //TODO: AC - verify why I can not use something like 'com.google.android.gms:play-services-vision:9.4.0+'
+    //TODO: AC - it seems to be a problem with play-services-vision > 11.2.0 -> https://stackoverflow.com/questions/45692460/failed-to-resolve-com-google-android-gmsplay-services-in-intellij-idea-with-gr
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.android.gms:play-services-vision:9.4.0+'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    testCompile 'junit:junit:4.12'
+}

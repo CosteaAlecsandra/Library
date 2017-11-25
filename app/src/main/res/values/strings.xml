@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyLibrary</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="send_credentials">Login</string>
+    <string name="go_to_add_book_page_btn">Add new book</string>
+    <string name="go_to_search_books_page_btn">Search books</string>
+    <string name="exit_btn">Logout</string>
+    <string name="go_to_view_library_page_btn">View my books</string>
+    <string name="go_to_view_favorites_books_page">Favorites books</string>
+    <string name="go_to_view_all_books_page">All books</string>
+    <string name="scan_text">Scan Text</string>
+</resources>

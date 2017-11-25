@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.alecsandra.library.ViewHomePage">
+
+    <Button
+        android:id="@+id/goToAddBookBtnId"
+        android:layout_width="228dp"
+        android:layout_height="62dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="44dp"
+        android:onClick="goToMyLibraryPage"
+        android:text="@string/go_to_view_library_page_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/goToDisplayBooksBtnId"
+        android:layout_width="228dp"
+        android:layout_height="62dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="30dp"
+        android:onClick="goToAddNewBookPage"
+        android:text="@string/go_to_add_book_page_btn"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToAddBookBtnId" />
+
+    <Button
+        android:id="@+id/exitBtnIb"
+        android:layout_width="232dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="91dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:onClick="logout"
+        android:text="@string/exit_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/goToSearchBooksBtnId"
+        android:layout_width="228dp"
+        android:layout_height="62dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="26dp"
+        android:onClick="goToSearchBookPage"
+        android:text="@string/go_to_search_books_page_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToDisplayBooksBtnId" />
+
+    <Button
+        android:id="@+id/goToTryOcrFormImgBtnId"
+        android:layout_width="216dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="16dp"
+        android:onClick="tryOcrFromImg"
+        android:text="Try ocr from img"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToSearchBooksBtnId" />
+</android.support.constraint.ConstraintLayout>
